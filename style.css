@@ -48,8 +48,6 @@ button {
     width: 650px;
     height: 650px;
     display: grid;
-    grid-template-columns: repeat(var(--divs), 1fr);
-    grid-template-rows: repeat(var(--divs), 1fr);
 }
 
 #borderContainer {
@@ -63,6 +61,7 @@ button {
 
 .gridDiv {
     user-select: none;
+    background-color: #e6e6e6;
 }
 
 #colorPicker {
