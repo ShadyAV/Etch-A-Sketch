@@ -12,9 +12,31 @@ h1 {
     justify-content: center;
 }
 
+#buttonAndGrid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 #grid {
     width: 650px;
     height: 650px;
     display: grid;
-    grid-template-columns: repeat(var(--divs), auto);
+    grid-template-columns: repeat(var(--divs), 1fr);
+    grid-template-rows: repeat(var(--divs), 1fr);
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#borderContainer {
+    background-color: #ededed;
+}
+
+.gridDiv {
+    user-select: none;
 }
