@@ -11,13 +11,19 @@
 
 <body>
     <h1>Etch-A-Sketch</h1>
-    <div id="buttonAndGrid">
-        <button id="sizeButton">Size</button>
-        <div id="container">
-            <div id="borderContainer">
-                <div id="grid"></div>
-            </div>
-            <button>Clear</button>
+    <div id="buttonsAndGrid">
+        <div id="leftButtons">
+            <input type="color" id="colorPicker">
+            <button id="sizeButton">Erase</button>
+            <button id="sizeButton">RGB</button>
+            <button id="sizeButton">Fade</button>
+        </div>
+        <div id="borderContainer">
+            <div id="grid"></div>
+        </div>
+        <div id="rightButtons">
+            <button id="sizeButton">Size</button>
+            <button id="sizeButton">Clear</button>
         </div>
     </div>
 </body>

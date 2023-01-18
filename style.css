@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 :root {
     --divs: 16;
 }
@@ -5,17 +7,41 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'VT323', monospace;
 }
 
 h1 {
     display: flex;
     justify-content: center;
+    margin: 32px;
+    font-size: 64px;
 }
 
-#buttonAndGrid {
+#buttonsAndGrid {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    gap: 32px;
+}
+
+#leftButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 650px;
+    justify-content: center;
+}
+
+button {
+    font-size: 32px;
+    width: 128px;
+    height: 128px;
+}
+
+#rightButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 #grid {
@@ -26,17 +52,21 @@ h1 {
     grid-template-rows: repeat(var(--divs), 1fr);
 }
 
-#container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-}
-
 #borderContainer {
     background-color: #ededed;
+    box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
+        25px 0px 20px -20px rgba(0, 0, 0, 0.45),
+        0px 25px 20px -20px rgba(0, 0, 0, 0.45),
+        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
+
 }
 
 .gridDiv {
     user-select: none;
+}
+
+#colorPicker {
+    border: none;
+    width: 128px;
+    height: 128px;
 }

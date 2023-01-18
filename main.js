@@ -14,8 +14,17 @@ function deleteDivs() {
     });
 }
 
+let isDown = false
+document.body.onmousedown = () => (isDown = true)
+document.body.onmouseup = () => (isDown = false)
+
 function paintDiv(newDiv) {
-    newDiv.addEventListener("mouseenter", function changeColor() {
+    newDiv.addEventListener("mouseover", function changeColor() {
+        if (isDown) {
+            newDiv.style.backgroundColor = "black";
+        }
+    });
+    newDiv.addEventListener("mousedown", function changeColor() {
         newDiv.style.backgroundColor = "black";
     });
 }
