@@ -90,3 +90,111 @@ p {
 .active {
     border: thick solid black;
 }
+
+@media (max-width: 1024px) {
+
+    #leftButtons {
+        display: flex;
+        gap: 8px;
+        padding-top: 10px;
+    }
+
+    #rightButtons {
+        display: flex;
+        gap: 8px;
+        padding-top: 10px;
+    }
+
+    #grid {
+        width: 450px;
+        height: 450px;
+    }
+
+    h1 {
+        margin: 16px;
+        font-size: 80px;
+    }
+
+    button {
+        font-size: 32px;
+        width: 100px;
+        height: 100px;
+        background-color: white;
+    }
+
+    #colorPicker {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    #buttonsAndGrid {
+        gap: 16px;
+    }
+
+    #grid {
+        width: 420px;
+        height: 420px;
+    }
+
+    h1 {
+        margin: 16px;
+        font-size: 75px;
+    }
+
+    button {
+        font-size: 32px;
+        width: 90px;
+        height: 90px;
+        background-color: white;
+    }
+
+    #colorPicker {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 650px) {
+    #buttonsAndGrid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #leftButtons {
+        display: flex;
+        gap: 8px;
+        padding-bottom: 10px;
+        flex-direction: row;
+    }
+
+    #rightButtons {
+        display: flex;
+        gap: 8px;
+        padding-top: 10px;
+        flex-direction: row;
+    }
+
+    #grid {
+        width: 300px;
+        height: 300px;
+    }
+
+    h1 {
+        margin: 16px;
+        font-size: 52px;
+    }
+
+    button {
+        font-size: 25px;
+        width: 65px;
+        height: 65px;
+        background-color: white;
+    }
+
+    #colorPicker {
+        width: 65px;
+        height: 65px;
+    }
+}

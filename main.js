@@ -23,6 +23,7 @@ const gridDiv = document.getElementById("grid");
 const sizeButton = document.getElementById("sizeButton");
 const gridDivs = document.querySelectorAll('.gridDiv');
 const colorPicker = document.getElementById("colorPicker");
+const colorButton = document.getElementById("colorButton");
 const rgbButton = document.getElementById("rgbButton");
 const eraseButton = document.getElementById("eraseButton");
 const clearButton = document.getElementById("clearButton");
@@ -46,7 +47,7 @@ document.body.onmousedown = () => (isDown = true);
 document.body.onmouseup = () => (isDown = false);
 
 colorPicker.oninput = (e) => setCurrentColor(e.target.value);
-colorPicker.onclick = () => setCurrentMode("color");
+colorButton.onclick = () => setCurrentMode("color");
 rgbButton.onclick = () => setCurrentMode("rainbow");
 eraseButton.onclick = () => setCurrentMode("erase");
 clearButton.onclick = () => clearDivs();
@@ -88,7 +89,7 @@ function activeButton(newMode) {
     if (currentMode === "rainbow") {
         rgbButton.classList.remove("active");
     } else if (currentMode === "color") {
-        colorPicker.classList.remove("active");
+        colorButton.classList.remove("active");
     } else if (currentMode === "erase") {
         eraseButton.classList.remove("active");
     }
@@ -96,7 +97,7 @@ function activeButton(newMode) {
     if (newMode === "rainbow") {
         rgbButton.classList.add("active");
     } else if (newMode === "color") {
-        colorPicker.classList.add("active");
+        colorButton.classList.add("active");
     } else if (newMode === "erase") {
         eraseButton.classList.add("active");
     }
