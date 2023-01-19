@@ -1,4 +1,4 @@
-const DEFAULT_COLOR = "#333333";
+const DEFAULT_COLOR = "#532828";
 const DEFAULT_MODE = "color";
 const DEFAULT_SIZE = "16";
 
@@ -7,6 +7,7 @@ let currentMode = DEFAULT_MODE;
 let currentSize = DEFAULT_SIZE;
 
 function setCurrentMode(newMode) {
+    activeButton(newMode);
     currentMode = newMode;
 }
 
@@ -28,9 +29,12 @@ const clearButton = document.getElementById("clearButton");
 
 sizeButton.addEventListener("click", () => {
     let currentSize = prompt("Please, enter the size of the grid", "64");
-    deleteDivs();
-    setCurrentSize(currentSize);
-    createDivs(currentSize);
+    if (currentSize) {
+        deleteDivs();
+        setCurrentSize(currentSize);
+        createDivs(currentSize);
+    }
+
 });
 
 function deleteDivs() {
@@ -68,7 +72,7 @@ function clearDivs() {
     createDivs(currentSize);
 }
 
-function createDivs(size = 16) {
+function createDivs(size) {
     gridDiv.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     gridDiv.style.gridTemplateRows = `repeat(${size}, 1fr)`
     for (let i = 0; i < size * size; i++) {
@@ -78,12 +82,29 @@ function createDivs(size = 16) {
         newDiv.addEventListener("mouseover", paintDiv);
         newDiv.addEventListener("mousedown", paintDiv);
     }
-    let root = document.documentElement;
-    root.style.setProperty("--divs", size);
+}
+
+function activeButton(newMode) {
+    if (currentMode === "rainbow") {
+        rgbButton.classList.remove("active");
+    } else if (currentMode === "color") {
+        colorPicker.classList.remove("active");
+    } else if (currentMode === "erase") {
+        eraseButton.classList.remove("active");
+    }
+
+    if (newMode === "rainbow") {
+        rgbButton.classList.add("active");
+    } else if (newMode === "color") {
+        colorPicker.classList.add("active");
+    } else if (newMode === "erase") {
+        eraseButton.classList.add("active");
+    }
 }
 
 window.onload = () => {
-    createDivs();
+    createDivs(DEFAULT_SIZE);
+    activeButton(DEFAULT_MODE);
 }
 
 

@@ -35,6 +35,17 @@ button {
     font-size: 32px;
     width: 128px;
     height: 128px;
+    background-color: white;
+}
+
+button,
+input[type='color'] {
+    transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+    transform: scale(1.02);
 }
 
 #rightButtons {
@@ -65,7 +76,6 @@ button {
 }
 
 #colorPicker {
-    border: none;
     width: 128px;
     height: 128px;
 }
@@ -75,4 +85,8 @@ p {
     justify-content: center;
     margin: 32px;
     font-size: 24px;
+}
+
+.active {
+    border: thick solid black;
 }
